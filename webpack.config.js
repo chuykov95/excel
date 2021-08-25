@@ -20,9 +20,8 @@ const jsLoaders = () => {
     ]
 
     if (isDev) {
-        loaders.push('eslint-loaders')
+        loaders.push('eslint-loader')
     }
-
 
     return loaders
 }
@@ -42,11 +41,11 @@ module.exports = {
             '@core': path.resolve(__dirname, 'src/core'),
         }
     },
+    devtool: isDev ? 'source-map' : false,
     devServer: {
         port: 3000,
         hot: isDev
     },
-    devtool: isDev ? 'source-map' : false,
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
