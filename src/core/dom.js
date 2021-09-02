@@ -13,6 +13,10 @@ class Dom {
         return this.$el.outerHTML.trim()
     }
 
+    get data() {
+        return this.$el.dataset
+    }
+
     clear() {
         this.html('')
         return this
@@ -44,6 +48,19 @@ class Dom {
 
     getCoords() {
         return this.$el.getBoundingClientRect()
+    }
+
+    findAll(selector) {
+        return this.$el.querySelectorAll(selector)
+    }
+
+    /*
+    *
+    *
+    * */
+    css(styles= {}) {
+        const styleArr = Object.entries(styles)
+        return styleArr.forEach(style => this.$el.style[style[0]] = style[1])
     }
 }
 

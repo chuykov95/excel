@@ -85,6 +85,10 @@
     &:hover {
       cursor: col-resize;
     }
+    .line {
+      width: 1px;
+      background: $primary-color;
+    }
   }
 
   .row-resize {
