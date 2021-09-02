@@ -54,13 +54,12 @@ class Dom {
         return this.$el.querySelectorAll(selector)
     }
 
-    /*
-    *
-    *
-    * */
-    css(styles= {}) {
-        const styleArr = Object.entries(styles)
-        return styleArr.forEach(style => this.$el.style[style[0]] = style[1])
+    css(styles = {}) {
+        Object
+            .keys(styles)
+            .forEach(key => {
+                this.$el.style[key] = styles[key]
+            })
     }
 }
 

@@ -72,9 +72,9 @@
     right: 0;
     opacity: 0;
     background: $primary-color;
-
+    z-index: 1000;
     &:hover {
-      opacity: 1;
+      opacity: 1!important;
     }
   }
 
@@ -84,10 +84,6 @@
 
     &:hover {
       cursor: col-resize;
-    }
-    .line {
-      width: 1px;
-      background: $primary-color;
     }
   }
 

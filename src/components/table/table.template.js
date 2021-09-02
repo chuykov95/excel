@@ -8,7 +8,6 @@ function toColumn(col, index) {
         <div class="column" data-type="resizable" data-col="${index}">
             ${col}
             <div class="col-resize" data-resize="col">
-                <div class="line"></div>
             </div>
         </div>
     `
