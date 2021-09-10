@@ -1,10 +1,10 @@
 const CODES = {
-    A: 65,
-    Z: 90
+  A: 65,
+  Z: 90
 }
 
 function toColumn(col, index) {
-    return `
+  return `
         <div class="column" data-type="resizable" data-col="${index}">
             ${col}
             <div class="col-resize" data-resize="col">
@@ -14,8 +14,8 @@ function toColumn(col, index) {
 }
 
 function toCell(row) {
-    return function(_, col) {
-        return `
+  return function(_, col) {
+    return `
             <div 
                 class="cell" 
                 data-type="cell"
@@ -24,13 +24,13 @@ function toCell(row) {
                 contenteditable
             ></div>
         `
-    }
+  }
 }
 
 function createRow(index, content) {
-    const resize =
-        index ? `<div class="row-resize" data-resize="row"></div>` : ''
-    return `
+  const resize =
+    index ? `<div class="row-resize" data-resize="row"></div>` : ''
+  return `
         <div class="row" data-type="resizable">
             <div class="row-info">
                 ${index ? index : ''}
@@ -42,28 +42,28 @@ function createRow(index, content) {
 }
 
 function toChar(_, index) {
-    return String.fromCharCode(CODES.A + index)
+  return String.fromCharCode(CODES.A + index)
 }
 
 export function createTable(rowsCount = 15) {
-    const colsCount = CODES.Z - CODES.A + 1
-    const rows = []
+  const colsCount = CODES.Z - CODES.A + 1
+  const rows = []
 
-    const cols = new Array(colsCount)
-        .fill('')
-        .map(toChar)
-        .map(toColumn)
-        .join('')
+  const cols = new Array(colsCount)
+    .fill('')
+    .map(toChar)
+    .map(toColumn)
+    .join('')
 
-    rows.push(createRow(null, cols))
+  rows.push(createRow(null, cols))
 
-    for (let row = 0; row < rowsCount; row++) {
-        const cell = new Array(colsCount)
-            .fill('')
-            // .map(toCell)
-            .map(toCell(row))
-            .join('')
-        rows.push(createRow(row + 1, cell))
-    }
-    return rows.join('')
+  for (let row = 0; row < rowsCount; row++) {
+    const cell = new Array(colsCount)
+      .fill('')
+      // .map(toCell)
+      .map(toCell(row))
+      .join('')
+    rows.push(createRow(row + 1, cell))
+  }
+  return rows.join('')
 }
