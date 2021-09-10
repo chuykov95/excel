@@ -10,7 +10,7 @@
     "arrow-parens": "off",
     "comma-dangle": "off",
     "linebreak-style": ["error", "windows"],
-    "indent": ["error", 2],
+    "indent": [2, 2],
     "require-jsdoc": "off",
     "operator-linebreak": "off"
   },
