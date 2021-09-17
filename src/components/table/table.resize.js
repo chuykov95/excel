@@ -37,7 +37,8 @@ export function resizeHandler(event, $root) {
 
         resolve({
           value,
-          id: type === 'col' ? $parent.data.col : null
+          type,
+          id: $parent.data[type]
         })
 
         $resizer.css({
