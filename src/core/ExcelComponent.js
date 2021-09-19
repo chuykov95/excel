@@ -14,7 +14,6 @@ export class ExcelComponent extends DomListener {
   }
 
   prepare() {
-    console.log('excom pre')
   }
 
   // Возвращает шаблон компонента

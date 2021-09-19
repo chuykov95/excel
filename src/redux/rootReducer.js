@@ -2,13 +2,12 @@ import {
   APPLY_STYLE,
   CHANGE_STYLES,
   CHANGE_TEXT, CHANGE_TITLE,
-  TABLE_RESIZE
+  TABLE_RESIZE, UPDATE_DATE
 } from '@/redux/types';
 
 export function rootReducer(state, action) {
   let field
   let val
-  // console.log('Action: ', action )
   switch (action.type) {
     case TABLE_RESIZE:
       field = action.data.type === 'col' ? 'colState' : 'rowState'
@@ -37,6 +36,8 @@ export function rootReducer(state, action) {
       return {
         ...state, appTitle: action.data.value
       }
+    case UPDATE_DATE:
+      return {...state, openedDate: new Date().toJSON()}
     default:
       return state
   }

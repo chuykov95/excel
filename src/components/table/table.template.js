@@ -35,7 +35,6 @@ function toColumn({col, index, width}) {
 }
 
 function toCell(state, row) {
-  console.log('Cell up')
   return function(_, col) {
     const id = `${row}:${col}`
     const width = getWidth(state.colState, col)
